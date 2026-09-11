@@ -1,0 +1,35 @@
+.logoutBtn {
+    padding: 8px 50px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    background: linear-gradient(-60deg, #d1cbcb, #e4dede, #d1cccc, #ffffff);
+    box-shadow: 0 1px 15px rgba(255, 255, 255, 0.384);
+    background-size: 300% 150%;
+    background-position: 150% center;
+}
+
+.logoutBtn:hover {
+    animation: up .80s ease-in-out .80s forwards, shine .80s ease .80s forwards;
+}
+
+
+
+@keyframes up {
+    0%, 100%{
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    } 
+}
+
+
+@keyframes shine {
+    from{
+        background-position: -60% center;
+    }
+    to {
+        background-position: 100% center;
+    } 
+}
