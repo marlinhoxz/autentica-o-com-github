@@ -1,36 +1,142 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🔐 Autenticação com GitHub
 
-## Getting Started
+Projeto desenvolvido para estudar e implementar autenticação de usuários utilizando o **GitHub OAuth** em uma aplicação **Next.js**.
 
-First, run the development server:
+A aplicação permite que o usuário faça login por meio da sua conta do GitHub e acesse uma área protegida após a autenticação.
+
+## 🚀 Tecnologias utilizadas
+
+* **Next.js**
+* **React**
+* **TypeScript**
+* **Auth.js (NextAuth.js)**
+* **GitHub OAuth**
+* **CSS Modules**
+* **ESLint**
+
+## ✨ Funcionalidades
+
+* Login com conta do GitHub.
+* Autenticação por OAuth.
+* Gerenciamento de sessão do usuário.
+* Proteção de rotas privadas.
+* Redirecionamento para a área autenticada.
+* Exibição de informações da sessão do usuário.
+
+## 📁 Estrutura do projeto
+
+A estrutura pode variar conforme a evolução do projeto, mas os principais conceitos utilizados são:
+
+```text
+autentica-o-com-github/
+├── src/
+│   └── app/
+│       ├── api/
+│       │   └── auth/
+│       ├── login/
+│       ├── dashboard/
+│       └── ...
+├── public/
+├── .env.local
+├── package.json
+└── README.md
+```
+
+## ⚙️ Como executar o projeto
+
+### 1. Clone o repositório
+
+```bash
+git clone https://github.com/marlinhoxz/autentica-o-com-github.git
+```
+
+### 2. Acesse a pasta
+
+```bash
+cd autentica-o-com-github
+```
+
+### 3. Instale as dependências
+
+```bash
+npm install
+```
+
+### 4. Configure as variáveis de ambiente
+
+Crie um arquivo chamado `.env.local` na raiz do projeto:
+
+```env
+AUTH_SECRET="sua-chave-secreta"
+
+AUTH_GITHUB_ID="seu-client-id"
+AUTH_GITHUB_SECRET="seu-client-secret"
+```
+
+> **Observação:** os nomes das variáveis devem corresponder exatamente aos utilizados na configuração do Auth.js no projeto.
+
+### 5. Configure o GitHub OAuth
+
+Para permitir o login com GitHub:
+
+1. Acesse as configurações de desenvolvedor do GitHub.
+2. Entre em **Settings → Developer settings → OAuth Apps**.
+3. Crie uma nova aplicação OAuth.
+4. Configure a URL inicial como:
+
+```text
+http://localhost:3000
+```
+
+5. Configure a URL de callback de autorização conforme a rota utilizada pelo Auth.js no projeto. Em uma configuração padrão, ela costuma ser:
+
+```text
+http://localhost:3000/api/auth/callback/github
+```
+
+6. Copie o **Client ID** e o **Client Secret** para o arquivo `.env.local`.
+
+### 6. Inicie o servidor de desenvolvimento
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 7. Acesse no navegador
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🧠 O que foi praticado
 
-## Learn More
+Este projeto foi desenvolvido com o objetivo de compreender, na prática:
 
-To learn more about Next.js, take a look at the following resources:
+* Como funciona a autenticação OAuth.
+* Como integrar um provedor externo de login.
+* Como utilizar o Auth.js em uma aplicação Next.js.
+* Como trabalhar com sessões de usuário.
+* Como proteger páginas e rotas.
+* Como configurar variáveis de ambiente.
+* Como lidar com autenticação no App Router.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🔒 Segurança
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+* Não compartilhe o `Client Secret` do GitHub.
+* Não envie o arquivo `.env.local` para o GitHub.
+* Utilize variáveis de ambiente para informações sensíveis.
+* Em produção, configure corretamente os domínios e URLs de callback.
 
-## Deploy on Vercel
+## 📌 Status do projeto
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+🚧 Projeto desenvolvido para fins de estudo e prática de autenticação com GitHub.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 👨‍💻 Autor
+
+**Marlon**
+
+* GitHub: [@marlinhoxz](https://github.com/marlinhoxz)
+
+---
+
+⭐ Se este projeto foi útil para você, considere deixar uma estrela no repositório.
